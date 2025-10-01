@@ -32,7 +32,7 @@ on_the_fly_dataset/
 ## Quick Start
 ```bash
 # Clone repository
-git clone https://github.com/your-username/on-the-fly-dataset.git
+git clone https://github.com/aisolutions01/cyber-physics-dataset
 cd on-the-fly-dataset
 
 # Install requirements
