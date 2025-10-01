@@ -1,0 +1,4 @@
+{
+"incident_types": ["Login Failure", "Unauthorized Access", "Malware Detection", "SLA Violation"],
+"severity_levels": ["Low", "Medium", "High"]
+}
