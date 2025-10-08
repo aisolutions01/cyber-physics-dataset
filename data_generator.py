@@ -1,39 +1,43 @@
 # =========================
 # data_generator.py
 # =========================
-import random
 import json
 import time
 from datetime import datetime
+from typing import Generator, Dict, Any
 
 
 class IncidentGenerator:
-def __init__(self, config_path="constraints.json"):
-with open(config_path, "r") as f:
-self.rules = json.load(f)
+    def __init__(self, data_path: str = "streams_1k.json"):
+        """Initialize generator by loading the pre-generated streaming JSON file."""
+        with open(data_path, "r") as f:
+            self.events = json.load(f)
+        self.index = 0
+        self.total = len(self.events)
+
+    def generate_incident(self) -> Dict[str, Any]:
+        """Return one incident from the loaded JSON, emulating on-the-fly behavior."""
+        if self.index >= self.total:
+            # restart or stop when reaching the end
+            self.index = 0
+        event = self.events[self.index]
+        self.index += 1
+
+        # normalize timestamp if needed
+        if "timestamp" not in event:
+            event["timestamp"] = datetime.utcnow().isoformat()
+
+        return event
+
+    def stream(self, n: int = 10, delay: float = 0.5) -> Generator[Dict[str, Any], None, None]:
+        """Yield n incidents sequentially, with optional delay to simulate streaming."""
+        for _ in range(min(n, self.total)):
+            yield self.generate_incident()
+            time.sleep(delay)
 
 
-def generate_incident(self):
-# pick random incident type from rules
-incident_type = random.choice(self.rules["incident_types"])
-severity = random.choice(self.rules["severity_levels"])
-timestamp = datetime.utcnow().isoformat()
-
-
-# simple policy-inspired constraint: severity depends on type
-if incident_type == "Unauthorized Access":
-severity = "High"
-
-
-return {
-"timestamp": timestamp,
-"incident_type": incident_type,
-"severity": severity,
-"source": random.choice(["endpoint-1", "endpoint-2", "server-3"])
-}
-
-
-def stream(self, n=10, delay=1.0):
-for _ in range(n):
-yield self.generate_incident()
-time.sleep(delay)
+# Example usage:
+if __name__ == "__main__":
+    gen = IncidentGenerator("streams_1k.json")
+    for evt in gen.stream(n=5, delay=0.1):
+        print(evt)
