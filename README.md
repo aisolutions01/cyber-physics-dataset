@@ -114,6 +114,7 @@ Training time per batch: **< 0.40 second**
 | **Flink ML**           | Batch + Online             | ❌ No                         | Frequent        |
 | **DeepStream SDK**     | Stream Inference           | ❌ No                         | Offline         |
 | **Proposed Framework** | **On-the-Fly Incremental** | ✅ **Yes (Physics-Inspired)** | **None**        |
+
 The proposed system unifies data synthesis, constraint enforcement, and model updates in one continuous online loop.
 
 ---
@@ -149,6 +150,7 @@ python evaluation.py
 
 Kazem, M. (2025). On-the-Fly Incremental Learning Framework with Physics-Inspired Constraints.
 Preprint available at google drive: https://drive.google.com/file/d/1cK7g9NddOiuV7dZxTaFx-t0a4B5Hw4Rj/view?usp=drive_link.
+
 _Preprint submission pending on arXiv._
 ---
 
@@ -156,4 +158,5 @@ _Preprint submission pending on arXiv._
 
 Munther Kazem
 Computer Scientist • AI Researcher • System Architect
+
 📧 muntherkz2018@gmail.com
