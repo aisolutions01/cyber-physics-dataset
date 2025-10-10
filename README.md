@@ -3,6 +3,7 @@
 
 This repository implements a real-time adaptive learning framework that unifies on-the-fly data generation, incremental training, and physics-inspired constraints for continuous self-learning.
 It demonstrates how autonomous systems can evolve dynamically from streaming events — without static datasets or retraining cycles.
+
 ---
 
 ## Project Overview
@@ -24,7 +25,7 @@ Suitable for **AIOps**, **cybersecurity monitoring**, and **IoT analytics** wher
 The framework follows a four-stage pipeline:
 
 <img width="1200" height="627" alt="on-the-fly" src="https://github.com/user-attachments/assets/113c9506-a6d2-4919-8043-356b4f13e357" />
->*Figure 1: Stream ingestion → incremental training → real-time inference → logging and comparison.*
+> *Figure 1: Stream ingestion → incremental training → real-time inference → logging and comparison.*
 
 ---
 
