@@ -25,7 +25,6 @@ Suitable for **AIOps**, **cybersecurity monitoring**, and **IoT analytics** wher
 The framework follows a four-stage pipeline:
 
 <img width="1200" height="627" alt="on-the-fly" src="https://github.com/user-attachments/assets/113c9506-a6d2-4919-8043-356b4f13e357" />
-> *Figure 1: Stream ingestion → incremental training → real-time inference → logging and comparison.*
 
 ---
 
@@ -46,7 +45,7 @@ A Python-based generator continuously simulates operational incidents in JSON fo
 <p align="center">
   <img src="https://latex.codecogs.com/svg.latex?G(\theta,%20\xi;%20s)%20\rightarrow%20x" />
 </p>
->*where 𝑠 is the context, 𝜉 stochastic noise, and 𝜃 generator parameters.*
+where 𝑠 is the context, 𝜉 stochastic noise, and 𝜃 generator parameters.
 
 ---
 
@@ -74,7 +73,7 @@ For correlated features such as CPU load and network throughput:
 <p align="center">
   <img src="https://latex.codecogs.com/svg.latex?\ell_c(C(x,s))%20=%20\left\lVert%20C(x,s)%20\right\rVert_2^2" />
 </p>
->*This enforces smoothness between system metrics, mimicking conservation laws in physical systems — stabilizing the model during real-time adaptation.*
+This enforces smoothness between system metrics, mimicking conservation laws in physical systems — stabilizing the model during real-time adaptation.
 ---
 
 ## Experiments and Results
@@ -105,7 +104,7 @@ Example output:
 | F1-score | 0.68 |
 | Accuracy | 0.70 |
 
-Training time per batch: **< 0.35 second**
+Training time per batch: **< 0.40 second**
 
 # Comparative Analysis
 
