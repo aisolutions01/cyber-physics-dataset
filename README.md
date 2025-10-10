@@ -1,22 +1,21 @@
-# cyber-physics-dataset
+## cyber-physics-dataset
 # On-the-Fly Incremental Learning Framework with Physics-Inspired Constraints
 
-This repository implements a real-time learning framework that combines **on-the-fly data generation**, **incremental training**, and **physics-inspired constraints** for continuous adaptation.  
-It provides a practical demonstration of how autonomous systems can learn from streaming events dynamically — without relying on static datasets.
-
+This repository implements a real-time adaptive learning framework that unifies on-the-fly data generation, incremental training, and physics-inspired constraints for continuous self-learning.
+It demonstrates how autonomous systems can evolve dynamically from streaming events — without static datasets or retraining cycles.
 ---
 
 ## Project Overview
 
-Traditional machine learning pipelines depend on static, pre-collected datasets.  
-This project proposes a **dynamic, self-adaptive framework** capable of:
+Traditional machine learning pipelines rely on static, pre-collected datasets, which quickly become outdated in dynamic environments such as cybersecurity and IT operations.
+This project introduces a dynamic self-adaptive framework capable of:
 
-- Generating synthetic incidents in real time.  
-- Deduplicating recurring patterns automatically.  
-- Training incrementally on unique events.  
-- Performing instant inference and logging outcomes for audit and comparison.  
+1. Generating synthetic incidents on-the-fly
+2. Deduplicating recurring patterns automatically
+3. Training incrementally on unique events only
+4. Performing real-time inference and logging results for audit and comparison
 
-The system is particularly suited for **AIOps**, **cybersecurity monitoring**, and **IoT analytics**, where continuous learning is critical.
+Suitable for **AIOps**, **cybersecurity monitoring**, and **IoT analytics** where continuous learning and fast adaptation are essential.
 
 ---
 
@@ -24,44 +23,44 @@ The system is particularly suited for **AIOps**, **cybersecurity monitoring**, a
 
 The framework follows a four-stage pipeline:
 
-Stream Ingestion → Deduplication Center → Incremental Trainer → Real-Time Inference → Logging & Comparison
-
-
-A visual overview is shown below:
-
 <img width="1200" height="627" alt="on-the-fly" src="https://github.com/user-attachments/assets/113c9506-a6d2-4919-8043-356b4f13e357" />
-> *Figure 1: Stream ingestion → incremental training → real-time inference → logging and comparison.*
+*Figure 1: Stream ingestion → incremental training → real-time inference → logging and comparison.*
 
 ---
 
 ## Methodology
 
 ### 1. On-the-Fly Data Generator
-A lightweight Python-based generator simulates live system incidents in JSON format.  
-It produces diverse event types (`Login Failure`, `Malware Detection`, `SLA Violation`, etc.), each labeled with varying severity and source.
+A Python-based generator continuously simulates operational incidents in JSON format:
+{
+  "timestamp": "2025-10-07T12:00:00",
+  "incident_type": "login_fail",
+  "severity": 2,
+  "source": "endpoint-01",
+  "cpu_load": 0.233,
+  "net_bytes": 19766
+}
 
-Mathematically, the generator is expressed as:
-\[
-G(\theta, \xi; s) \rightarrow x
-\]
-where \(s\) is the context, \(\xi\) is stochastic noise, and \(\theta\) represents generator parameters.
+G(θ,ξ;s)→x
+where 𝑠 is the context, 𝜉 stochastic noise, and 𝜃 generator parameters.
 
 ---
 
 ### 2. Incremental Training & Inference
-- Repeated incidents are grouped as one (deduplication).  
-- Novel events are used for real-time model updates.  
-- Inference occurs immediately, and results are logged.  
-- The entire process occurs **on-the-fly** without pre-collected data.
+A. Deduplicate repeating incidents
+B. Train model incrementally on unseen samples
+C. Predict incident priority or class in real time
+D. Log every event and decision for audit comparison
+
+All processes occur on-the-fly — no batch storage or pre-collected data.
 
 ---
 
 ### 3. Physics-Inspired Constraints
-The learning process is regularized through constraints derived from system dynamics:
-\[
-\mathcal{L} = \mathbb{E}[L_{\text{task}}] + \lambda \mathbb{E}\left[\sum_j \ell_c(C_j(x,s))\right]
-\]
-This maintains model stability while adapting continuously.
+The training loss integrates operational or physical constraints:
+<p align="center">
+  <img src="https://latex.codecogs.com/svg.latex?\lambda%20\mathbb{E}\left[\sum_j\ell_c(C_j(x,s))\right]%20+%20\mathbb{E}[L_{\text{task}}]%20=%20\mathcal{L}" />
+</p>
 
 ---
 
