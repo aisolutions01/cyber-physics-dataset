@@ -179,7 +179,7 @@ Kazem, M. (2025). On-the-Fly Incremental Learning Framework with Physics-Inspire
 
 Preprint available at google drive: https://drive.google.com/file/d/1cK7g9NddOiuV7dZxTaFx-t0a4B5Hw4Rj/view?usp=drive_link.
 
-_Preprint submission pending on arXiv._
+_This preprint will be uploaded to arXiv upon endorsement approval._
 
 ---
 
