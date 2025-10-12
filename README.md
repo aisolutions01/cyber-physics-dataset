@@ -177,9 +177,9 @@ python evaluation.py
 
 Kazem, M. (2025). On-the-Fly Incremental Learning Framework with Physics-Inspired Constraints.
 
-Preprint available at google drive: https://drive.google.com/file/d/1cK7g9NddOiuV7dZxTaFx-t0a4B5Hw4Rj/view?usp=drive_link.
+Preprint available at : https://zenodo.org/records/17325991
 
-_This preprint will be uploaded to arXiv upon endorsement approval._
+DOI: https://doi.org/10.5281/zenodo.17325991
 
 ---
 
