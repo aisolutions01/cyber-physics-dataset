@@ -133,6 +133,8 @@ Training time per batch: **< 0.40 second**
 | **DeepStream SDK**     | Stream Inference           | ❌ No                         | Offline         |
 | **Proposed Framework** | **On-the-Fly Incremental** | ✅ **Yes (Physics-Inspired)** | **None**        |
 
+<img width="800" height="500" alt="scalability" src="https://github.com/user-attachments/assets/dd50bec0-4708-4f52-a9db-2154ba966297" />
+
 The proposed system unifies data synthesis, constraint enforcement, and model updates in one continuous online loop.
 
 ---
